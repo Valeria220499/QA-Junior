@@ -6,6 +6,7 @@ class URIComplement(Enum):
     POST_CUSTOMER = "rest/default/V1/customers"
     POST_CUSTOMER_GROUP = "rest/default/V1/customerGroups"
     POST_CART_TO_CUSTOMER = "rest/default/V1/customers/{customerId}/carts"
+    POST_INVENTORY_STOCKS = "rest/default/V1/inventory/stocks"
 
     GET_CUSTOMER_GROUP_BY_DEFAULT = "rest/default/V1/customerGroups/default"
     GET_CUSTOMER_GROUP_BY_STORE_ID = "rest/default/V1/customerGroups/default/{store_id}"

@@ -38,3 +38,7 @@ class StaticData(Enum):
     value = "{value}"
     customer_10 = 10
     default_group_id = 0
+    stock_id = 0
+    name = "prueba"
+    extension_attributes = {}
+    stock = {}
