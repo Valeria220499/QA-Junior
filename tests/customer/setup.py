@@ -128,3 +128,32 @@ def send_request_of_update_password_of_a_customer(customer_id, new_password, old
     TestData.response_status_code = response.status_code
 
     return response.json()
+
+def send_request_of_valideting_a_customer(payload_dict, token=None):
+    url = f"{TestData.base_url}{URIComplement.PUT_CUSTOMER.value}"
+
+    payload = json.dumps(payload_dict)
+
+    if token != None:
+        bearer_token = token
+    else:
+        bearer_token = TestData.token
+
+    headers = header_content_type_authorization(bearer_token)
+    response = requests.request(Method.PUT.value, url, headers=headers, data=payload)
+    TestData.response_status_code = response.status_code
+
+    return response.json()
+
+def send_request_of_checking_email(payload_dict, token=None):
+    url = f"{TestData.base_url}{URIComplement.POST_CUSTOMER_EMAIL_AVAILABLE.value}"
+    payload = json.dumps(payload_dict)
+
+    if token != None:
+        bearer_token = token
+    else:
+        bearer_token = TestData.token
+
+    headers = header_content_type_authorization(bearer_token)
+    response = requests.request(Method.POST.value, url, headers=headers, data=payload)
+    return response.json()
